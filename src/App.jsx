@@ -17,11 +17,14 @@ const App = () => {
       gen: "30",
     },
   ]);
+  const handleAddContact = (newContact) => {
+    setUsers((preUsers) => [...preUsers, newContact]);
+  };
 
   return (
-    <div className="h-screen  flex justify-center items-center text-black  ">
+    <div className="h-screen  flex justify-center items-center gap-5 text-black  ">
       <Users users={users} />
-      <UsersForm setUsers={setUsers} />
+      <UsersForm handleAddContact={handleAddContact} />
     </div>
   );
 };
