@@ -25,7 +25,7 @@ const UsersForm = ({ handleAddContact }) => {
     let newContact = { name, email, gen, id: uuid() };
     console.log(newContact);
     handleAddContact(newContact);
-    // setUsers((prev) => [...prev, user]);
+    setUsers((prevUsers) => [...prevUsers, newContact]);
     setName("");
     setEmail("");
     setGen("");
@@ -33,7 +33,7 @@ const UsersForm = ({ handleAddContact }) => {
 
   return (
     <div className=" ">
-      <h1 className="uppercase ">usersform</h1>
+      <h1 className="uppercase mb-2">usersform</h1>
       <form className=" space-y-4" onSubmit={handleSubmit}>
         <label className="input input-bordered flex items-center gap-2">
           <MdPerson />
